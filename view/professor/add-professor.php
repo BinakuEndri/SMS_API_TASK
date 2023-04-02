@@ -3,7 +3,7 @@
 <!-- Add Student Form -->
 <div class="container" style="max-width: 750px">
     <h2>Add Student</h2>
-    <form action="../../PHP/add_student.php" method="post">
+    <form action="../../PHP/add_professor.php" method="post">
 
         <div class="form-group">
             <label for="id">ID:</label>
@@ -38,32 +38,8 @@
             <input type="text" class="form-control" id="number" placeholder="Enter Number" name="number" required>
         </div>
 
-        <div class="form-group">
-            <label for="classroom_id">Classroom:</label>
-            <select class="form-select" aria-label="Default select example" name="classroom_id">
-                <option selected>Open this select menu</option>
-
-                <?php
-                $con = require "../../PHP/database.php";
-
-                $query = "select * from classroom";
-
-                $result = mysqli_query($con, $query);
-
-
-                while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                    <option value="<?php echo $row['ID'] ?>">
-                        <?php echo $row['Name'] ?>
-                    </option>
-                    <?php
-                }
-                $con->close();
-                ?>
-            </select>
-        </div>
         <div class="form-group mt-2">
-            <button type="submit" class="btn btn-primary" name="add_student">Add Student</button>
+            <button type="submit" class="btn btn-primary" name="add_professor">Add Professor</button>
         </div>
     </form>
 </div>

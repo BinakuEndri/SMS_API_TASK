@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if (isset($_SESSION["Professor_ID"])) {
+
+  $con = require "../../PHP/database.php";
+
+  $query = "SELECT * FROM professor WHERE ID ={$_SESSION["Professor_ID"]}";
+
+  $result = $con->query($query);
+
+  $professor = $result->fetch_assoc();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,13 +38,16 @@
           <li><a href="manage-classroom.php">Manage Classrooms</a></li>
           <li><a href="manage-course.php">Manage Courses</a></li>
           <li><a href="manage-student.php">Manage Students</a></li>
+          <?php if (isset($professor)): ?>
+            <li><a href="../../PHP/logout.php">Log Out</a></li>
+          <?php endif; ?>
         </ul>
       </div>
     </header>
+    <?php if (isset($professor)): ?>
+      <h1>
+        <?= $professor["FullName"] ?>
+      </h1>
+    <?php else: ?>
 
-  </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-    crossorigin="anonymous"></script>
-
-</html>
+    <?php endif; ?>

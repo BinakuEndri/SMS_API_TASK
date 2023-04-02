@@ -11,7 +11,7 @@
 			<div class="col-lg-6 mx-auto">
 				<div class="card">
 					<div class="card-header">
-						<h5 class="card-title text-center">Send a Message via Twilio</h5>
+						<h5 class="card-title text-center">Send a Custom Message</h5>
 					</div>
 					<div class="card-body">
 						<form method="post">
