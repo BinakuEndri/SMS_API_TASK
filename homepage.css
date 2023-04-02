@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-container img {
+    height: 70px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .tag-container ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tag-container li {
+    margin-right: 20px;
+  }
+  
+  .tag-container a {
+    text-decoration: none;
+    color: #333;
+  }
+  
