@@ -50,4 +50,6 @@ if (isset($_SESSION["Professor_ID"])) {
       </h1>
     <?php else: ?>
 
-    <?php endif; ?>
+    <?php endif;
+    $con->close();
+    ?>

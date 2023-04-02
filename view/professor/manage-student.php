@@ -43,9 +43,11 @@ $result = mysqli_query($con, $query);
                                 <?php echo $row['Number'] ?>
                             </td>
                             <td>
-                                <button class="btn btn-danger">Grade</button>
-
-                                <button class="btn btn-success">Write</button>
+                                <form action="grade.php" method="POST">
+                                    <input type="hidden" name="id" id="id" value="<?php echo $row['ID'] ?>">
+                                    <button class="btn btn-danger" type="submit" name="grade">Grade</button>
+                                    <button class="btn btn-success">Write</button>
+                                </form>
                             </td>
 
                         </tr>

@@ -20,7 +20,6 @@ $result = mysqli_query($con, $query);
                         <th scope="col">Name</th>
                         <th scope="col">Professor</th>
                         <th scope="col">Classroom</th>
-
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
