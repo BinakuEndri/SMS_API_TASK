@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/homepage.css">
+    <link rel="stylesheet" href="../../style/homepage.css">
     <title>Homepage</title>
   </head>
 
   <body>
     <header>
       <div class="logo-container">
-        <img src="../image/pr-logo.webp" alt="Your logo">
+        <img src="../../images/pr-logo.webp" alt="Your logo">
         <h3>Universiteti i Prishtinës "Hasan Prishtina"</h3>
       </div>
       <div class="tag-container">
