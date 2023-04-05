@@ -1,7 +1,18 @@
 <?php include 'homepage.php' ?>
+<?php include '../../PHP/message.php' ?>
 <!-- Add Student Form -->
 <div class="container" style="max-width: 750px">
-    <h2>Add Student</h2>
+    <?php
+    if (isset($_SESSION['Classroom_add'])) {
+        showMessage($_SESSION['Classroom_add']);
+        unset($_SESSION['Classroom_add']);
+    }
+    if (isset($_SESSION['Classroom_error'])) {
+        showMessage($_SESSION['Classroom_error']);
+        unset($_SESSION['Classroom_error']);
+    }
+    ?>
+    <h2>Add Classroom</h2>
     <form action="../../PHP/add_classroom.php" method="post">
 
         <div class="form-group">

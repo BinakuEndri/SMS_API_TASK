@@ -1,4 +1,6 @@
 <?php include 'homepage.php' ?>
+<?php include '../../PHP/message.php' ?>
+
 <?php
 
 if (isset($_POST['grade'])) {
@@ -24,6 +26,16 @@ if (isset($_POST['grade'])) {
 }
 ?>
 <div class="container" style="max-width: 750px">
+    <?php
+    if (isset($_SESSION['message'])) {
+        showMessage($_SESSION['message']);
+        unset($_SESSION['message']);
+    }
+    if (isset($_SESSION['message_error'])) {
+        showMessage($_SESSION['message_error']);
+        unset($_SESSION['message_error']);
+    }
+    ?>
     <h2>Add Grade</h2>
     <form action="../../PHP/add_grade.php" method="post">
 

@@ -11,7 +11,9 @@ $result = mysqli_query($con, $query);
 ?>
 
 <div class="container">
+
     <div class="row">
+
         <div class="col lg-6 md-6 sm-6">
             <table class="table table-striped table-hover">
                 <thead>
@@ -45,20 +47,20 @@ $result = mysqli_query($con, $query);
                             <td>
                                 <div class="row" style="max-width: 200px;">
                                     <div class="col">
-                                <form action="grade.php" method="POST">
-                                    <input type="hidden" name="id" id="id" value="<?php echo $row['ID'] ?>">
-                                    <button class="btn btn-primary" type="submit" name="grade">Grade</button>
-                                </form>
-                        </div>
-                                <div class="col">
+                                        <form action="grade.php" method="POST">
+                                            <input type="hidden" name="id" id="id" value="<?php echo $row['ID'] ?>">
+                                            <button class="btn btn-primary" type="submit" name="grade">Grade</button>
+                                        </form>
+                                    </div>
+                                    <div class="col">
 
-                                <form action="custom-msg.php" method="POST">
-                                    <input type="hidden" name="id" id="id" value="<?php echo $row['ID'] ?>">
-                                    <button class="btn btn-success" type="submit" name="write">Write</button>
-                                </form>
+                                        <form action="custom-msg.php" method="POST">
+                                            <input type="hidden" name="id" id="id" value="<?php echo $row['ID'] ?>">
+                                            <button class="btn btn-success" type="submit" name="write">Write</button>
+                                        </form>
+                                    </div>
                                 </div>
-                                </div>
-                            
+
                             </td>
 
                         </tr>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 
 
@@ -50,12 +51,15 @@ if (isset($_POST['add_grade'])) {
                     'body' => $message
                 ]
             );
-            echo "SMS sent successfully to $phone_number";
+            $_SESSION["message"] = "The message has been sent";
+            header("Location: ../view/professor/grade.php");
         } catch (Exception $e) {
-            echo "Error sending SMS: " . $e->getMessage();
+            $_SESSION["message_error"] = "The message failed to be sent";
+            header("Location: ../view/professor/grade.php");
         }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        $_SESSION["message_error"] = "The message failed to be sent";
+        header("Location: ../view/professor/grade.php");
     }
 }
 

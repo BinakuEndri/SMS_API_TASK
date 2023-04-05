@@ -10,6 +10,10 @@ if (isset($_SESSION["Professor_ID"])) {
   $result = $con->query($query);
 
   $professor = $result->fetch_assoc();
+} else {
+
+  header("Location: ../../PHP/logout.php");
+
 }
 
 ?>

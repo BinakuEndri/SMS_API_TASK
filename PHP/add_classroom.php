@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $conn = require "database.php";
 
 
@@ -12,9 +12,11 @@ if (isset($_POST['add_classroom'])) {
   VALUES ('$id', '$name')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New classroom added successfully";
+        $_SESSION["Classroom_add"] = "The classroom has been added";
+        header("Location: ../view/professor/add-classroom.php");
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        $_SESSION["Classroom_error"] = "The classroom failed to be  added";
+        header("Location: ../view/professor/add-classroom.php");
     }
 }
 
