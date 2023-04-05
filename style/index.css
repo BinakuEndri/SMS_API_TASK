@@ -59,6 +59,8 @@ label {
 
 input {
   width: 100%;
+  height: 35px;
+  font-size: 1rem;
 }
 
 /* submit button */
@@ -75,7 +77,10 @@ input {
   border: 1px solid #9e97aa;
   border-radius: 0.5em;
   padding: 0.5em;
+  
+  width:85px;
 }
+
 
 #form-submit input:hover {
   cursor: pointer;

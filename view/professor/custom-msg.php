@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Twilio Form</title>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
-</head>
-<body>
+<?php include 'homepage.php' ?>
+	<!-- Twilio PHP SDK -->
+	<?php
+
+if (isset($_POST['write'])) {
+    $id = $_POST['id'];
+    $con = require "../../PHP/database.php";
+    $query5 = "SELECT * from student WHERE ID = '$id'";
+    $result5 = mysqli_query($con, $query5);
+
+    $row = $result5->fetch_assoc();
+
+    $fullname = $row["FullName"];
+    $classroom = $row["ClasroomID"];
+    $number = $row["Number"];
+    
+
+}
+
+
+
+?>
+
 	<div class="container my-5">
 		<div class="row">
 			<div class="col-lg-6 mx-auto">
@@ -16,8 +31,7 @@
 					<div class="card-body">
 						<form method="post">
 						  <div class="form-group">
-						    <label for="to">To:</label>
-						    <input type="text" class="form-control" name="to" id="to" placeholder="Enter receiver's phone number">
+                          <input type="text" class="form-control" placeholder="<?php echo $fullname ?>" readonly required>
 						  </div>
 						  <div class="form-group">
 						    <label for="message">Message:</label>
@@ -30,11 +44,11 @@
 			</div>
 		</div>
 	</div>
-    
 
-	<!-- Twilio PHP SDK -->
-	<?php
-require_once __DIR__ . '/vendor/twilio-php-main/src/Twilio/autoload.php';
+</body>
+</html>
+<?php
+require_once  '../../vendor/twilio-php-main/src/Twilio/autoload.php';
 use Twilio\Rest\Client;
 		
 		//Twilio Account SID and Auth Token from twilio.com/console
@@ -44,10 +58,10 @@ use Twilio\Rest\Client;
          $twilio_number = '+15855221230';
 
 // Check if form has been submitted and both to and message are present
-if (isset($_POST['to']) && isset($_POST['message'])) {
+if (isset($_POST['message'])) {
 
     // Get the recipient's phone number from the form input
-    $to_number = $_POST['to'];
+    $to_number = $number;
 
     // Get the message from the form input
     $message = $_POST['message'];
@@ -73,9 +87,4 @@ if (isset($_POST['to']) && isset($_POST['message'])) {
     }
 }
 
-
 ?>
-
-</body>
-</html>
-

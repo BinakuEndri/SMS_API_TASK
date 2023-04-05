@@ -47,7 +47,7 @@ $result = mysqli_query($con, $query);
                         ?>
                 </tbody>
             </table>
-            <button class="btn btn-success"> <a href="add-classroom.php" style="text-decoration:none">
+            <button class="btn btn-success"> <a href="add-classroom.php"style="text-decoration:none; color:white">
                     <b>Add classroom<b></a> </button>
         </div>
     </div>

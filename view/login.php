@@ -69,18 +69,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <h2 style="text-align:center;">Universiteti i Prishtinës</h2>
       <h3>"Hasan Prishtina"</h3>
       <form action="" method="POST" id="login-form">
-        <div class="form-field">
-          <label for="username">
-            Username or Email
+        <div class="form-field">        
           </label>
-          <input type="text" name="username" id="username" size="50" required autofocus />
+          <input type="text"  placeholder="Përdoruesi" name="username" id="username" size="50" required autofocus />
         </div>
 
         <div class="form-field">
-          <label for="pass">
-            Password
           </label>
-          <input type="password" name="password" id="pass" size="50" required />
+          <input type="password" placeholder="Password" name="password" id="pass" size="50" required />
         </div>
 
         <div id="form-submit">

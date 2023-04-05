@@ -43,11 +43,22 @@ $result = mysqli_query($con, $query);
                                 <?php echo $row['Number'] ?>
                             </td>
                             <td>
+                                <div class="row" style="max-width: 200px;">
+                                    <div class="col">
                                 <form action="grade.php" method="POST">
                                     <input type="hidden" name="id" id="id" value="<?php echo $row['ID'] ?>">
-                                    <button class="btn btn-danger" type="submit" name="grade">Grade</button>
-                                    <button class="btn btn-success">Write</button>
+                                    <button class="btn btn-primary" type="submit" name="grade">Grade</button>
                                 </form>
+                        </div>
+                                <div class="col">
+
+                                <form action="custom-msg.php" method="POST">
+                                    <input type="hidden" name="id" id="id" value="<?php echo $row['ID'] ?>">
+                                    <button class="btn btn-success" type="submit" name="write">Write</button>
+                                </form>
+                                </div>
+                                </div>
+                            
                             </td>
 
                         </tr>
@@ -58,7 +69,7 @@ $result = mysqli_query($con, $query);
                         ?>
                 </tbody>
             </table>
-            <button class="btn btn-success"> <a href="add-student.php" style="text-decoration:none">
+            <button class="btn btn-success"> <a href="add-student.php" style="text-decoration:none; color:white">
                     <b>Add Student<b></a> </button>
         </div>
     </div>
